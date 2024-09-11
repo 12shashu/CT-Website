@@ -1,0 +1,125 @@
+/*.header{
+    border:5px solid ;
+    border-color: rgb(149,201,228);
+    background-color: rgb(149, 201, 228);
+    margin-top: 0;
+}
+.header{
+    display:inline-block;
+    flex-direction: column-reverse;
+    padding-left: 1050px;
+    padding-right:30px;
+    
+}*/
+*{
+    box-sizing: border-box;
+}
+/* .header{
+    display:flex;
+    flex-wrap: wrap;
+    
+} */
+a {
+text-decoration: underline;
+}
+.header{
+    margin-top: -8px;
+    /* margin-left: -8px;
+    margin-right: -10px; */
+overflow:hidden;
+background-color: #a9c634;
+padding:0px;
+
+}
+.header a{
+    float:left;
+    color:rgb(255, 255, 255);
+    text-align:center;
+    padding:12px;
+    text-decoration:none;
+    font-size:18px;
+    line-height:25px;
+    border-radius:4px;
+}
+
+.header a.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+.header a:hover{
+    background-color:#ddd;
+    color:black;
+}
+.header a.active{
+    background-color: dodgerblue;
+    color:white;
+
+}
+.header-right{
+    float:right;
+}
+@media screen and (max-width:500px) {
+    .headear a{
+        float:none;
+        display:block;
+        text-align:left;
+    }
+    .header-rigt{
+        float:none;
+    }
+}
+ /* .contaier2{
+    margin-left: -8px;
+}
+.container{
+    margin-left:-8px;
+}  */
+.responsive{
+    max-width:100%;
+    height:auto;
+}
+.tr1{
+    
+    /* display:grid; */
+    place-items: center; 
+    margin-left: 45%;
+    margin-left:45%;
+    margin-top: 300px;
+    margin-bottom: opx;
+
+}
+.tr{
+    color:black;
+    text-align:center;
+    padding:12px;
+    text-decoration:none;
+    font-size:18px;
+    line-height:25px;
+    border-radius:4px;
+    background-color: #bb6e6e;
+}
+body{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.tr1 a.tr{
+    font-size: 25px;
+    font-weight: bold;
+}
+.tr1 a:hover{
+    background-color: #ddd;
+    color:black;
+}
+.tr1 a.active{
+    background-color: dodgerblue;
+    color:white;
+}
+/* .header{
+    position: relative;
+    display: flex;
+    
+} */
+.fo{
+    place-items: center;
+}
+

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT skilltest</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .background {
+            background-image: url("photo1.png");
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+        }
+        
+        nav {
+            position: absolute;
+            top: 20px; 
+            left: 50px;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: yellow; 
+        }
+        
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            z-index: 1000;
+        }
+        
+        .background2 {
+            background-image: url("Bg.png");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 55, 99, 0.37);
+            z-index: 2;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%; 
+        }
+        
+        .centered-image {
+            max-width: 100%; 
+            max-height: 100%; 
+            padding-top: 20px;
+            padding-bottom: 20px;
+            justify-content: center;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+       
+        .background3 {
+            background-image: url("back3.png");
+            background-position: center;
+            background-size: cover;
+            height: 165px;
+            position: relative;
+        }
+        
+        #myCarousel {
+            position: relative;
+            z-index: 3;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .carousel-item {
+            display: none;
+        }
+        
+        .carousel-inner {
+            display: flex;
+        }
+
+        .carousel-item {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+            margin-right: 0;
+        }
+
+        .carousel-item.active,
+        .carousel-item-next,
+        .carousel-item-prev {
+            display: block;
+        }
+
+        .carousel-indicators {
+            z-index: 3;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            margin-left: 0%;
+            margin-bottom: 4px;
+            margin-top: 0px;
+        }
+
+        .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.728);
+            border-radius: 50%;
+        }
+
+        .carousel-indicators .active {
+            background-color: white;
+        }
+        
+        .backgroundfinal {
+            background-image: url("bf.png");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .tab-section {
+            background-color: rgba(13, 55, 99, 0.669);
+            padding: 10px;
+            display: flex;
+            padding-left: 80px;
+        }
+
+        .tab-section button {
+            background-color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .tab-section button:hover {
+            background-color: lightgray;
+        }
+        
+        .tab-section1 {
+            height: 50px;
+            background-color: rgba(13, 55, 99, 0.669);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .tab-section1 img.logo {
+            width: 100px; /* Adjust the width as needed */
+        }
+
+        .tab-section1 p.copyright {
+            margin: 0; /* Remove default margin */
+            font-size: 14px; /* Adjust font size as needed */
+        }
+
+        .breakpoint {
+            height: 20px;
+            background-color: rgba(13, 55, 99, 0.712);
+        }
+        
+        .image-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mountain-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .schedule-box {
+            position: absolute;
+            top: 20px;
+            left: 30%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+            max-width: 400px;
+            padding: 2%;
+        }
+
+        .schedule-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .schedule-box p {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-box {
+                width: 80%;
+                max-width: none;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .tab-section1 {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+                padding: 20px;
+            }
+            .tab-section1 img.logo {
+                margin-bottom: 10px;
+            }
+        }
+        .background,
+        .background2,
+        .background3,
+        .backgroundfinal {
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <nav>
+                <img src="Logo.png" alt="logo" >
+                <ul>
+                    <li><a href="#but">01.History</a></li>
+                    <li><a href="#but1">02.Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="sticky-nav">
+        <div class="container">
+            <nav>
+                <img src="Logonav.png" alt="logo" >
+                <ul>
+                    <li><a href="#but">01.History</a></li>
+                    <li><a href="#but1">02.Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="breakpoint"></div>
+    
+    <div id="but" class="background2" >
+        <div class="container">
+            <img src="Text.png" alt="text" class="centered-image">
+        </div>
+    </div>
+    
+    <div class="background3">
+        <div class="overlay">
+            <div class="container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="c1.png" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="c2.png" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="c1c.png" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="c2c.png" alt="Image 4">
+                        </div>
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="backgroundfinal" id="but1">
+       <div class="text">
+           <img src="Text 2.png" alt="text" class="centered-image">
+       </div>
+       <div class="tab-section">
+           <button id="mountain1Btn" onclick="showMountain(1)">Mountain 1</button>
+           <button id="mountain2Btn" onclick="showMountain(2)">Mountain 2</button>
+       </div>
+
+        <div class="image-section">
+            <div class="image-container">
+                <img src="m1.png" id="mountain1Img" alt="Mountain 1" class="mountain-img">
+                <div class="schedule-box mountain1">
+                    <h3>SCHEDULE</h3>
+                    <p>25 Nov 2016        Vestibulum viverra</p>
+                    <p>28 Nov 2016        Vestibulum viverra</p>
+                    <p>18 Dec 2016        Vestibulum viverra</p>
+                    <p>7 Jan 2017         Vestibulum viverra</p>
+                </div>
+                <img src="m2.png" id="mountain2Img" alt="Mountain 2" class="mountain-img" style="display: none;">
+                <div class="schedule-box mountain2" style="display: none;">
+                    <h3>SCHEDULE</h3>
+                    <p>17 Nov 2016        Vestibulum viverra</p>
+                    <p>13 Dec 2016        Vestibulum viverra</p>
+                    <p>28 Dec 2016        Vestibulum viverra</p>
+                    <p>9 Feb 2017         Vestibulum viverra</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ta" class="tab-section1">
+            <img src="Logonav.png" alt="logo" class="logo">
+            <p class="copyright">COPYRIGHT 2016. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').on('slide.bs.carousel', function (e) {
+                var $e = $(e.relatedTarget);
+                var idx = $e.index();
+                var itemsPerSlide = 3;
+                var totalItems = $('.carousel-item').length;
+
+                for (var i = 0; i < totalItems; i++) {
+                    if (i < idx || i >= idx + itemsPerSlide) {
+                        $('.carousel-item').eq(i).hide();
+                    } else {
+                        $('.carousel-item').eq(i).show();
+                    }
+                }
+            });
+        });
+
+        function showMountain(mountainNumber) {
+            $('.mountain-img').hide();
+            $('.schedule-box').hide();
+
+            $('#mountain' + mountainNumber + 'Img').show();
+            $('.mountain' + mountainNumber).show();
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling when clicking on navigation links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+            
+            // Add a console log statement to check if this script is executing
+            console.log("Smooth scrolling script initialized.");
+        });
+    </script>
+</body>
+</html>
